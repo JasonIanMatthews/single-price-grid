@@ -1,0 +1,204 @@
+:root {
+	--cyan: hsl(179, 46%, 52%);
+	--darkcyan: hsl(179, 58%, 44%);
+	--brightyellow: hsl(71, 73%, 54%);
+	--lightgray: hsl(204, 43%, 93%);
+	--grayishblue: hsl(218, 22%, 67%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Karla', sans-serif;
+	background: url(images/snowman-1090261_1920.jpg) no-repeat center;
+	max-width: 100vw;
+	max-height: 100vh;
+}
+
+section {
+	min-height: 90vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 100px 30px;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 100%;
+	max-width: 550px;
+	margin: 0 auto;
+	border-radius: 10px;
+	box-shadow: 3px 5px 14px 3px rgb(0, 0, 0, 0.3);
+	overflow: hidden;
+}
+
+.box {
+	padding: 2rem;
+}
+
+
+/*************Join our community box************/
+
+.boxone {
+	background-color: #fff;
+}
+
+h1 {
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: var(--cyan);
+}
+
+.boxone h2 {
+	font-size: 1.1rem;
+	padding: 1rem 0;
+	color: var(--brightyellow);
+}
+
+.boxone p {
+	font-size: 1rem;
+	line-height: 1.6;
+	color: var(--grayishblue);
+}
+
+
+/***********subscription box*****************/
+
+.boxtwo {
+	color: #fff;
+	background-color: var(--darkcyan);
+}
+
+.boxtwo p {
+	padding: 1rem 0 0;
+	color: var(--lightgray);
+	display: flex;
+	align-items: center;
+}
+
+span {
+	font-size: 1.7rem;
+	margin-right: .6rem;
+	font-weight: 700;
+}
+
+.boxtwo a {
+	text-align: center;
+	width: 100%;
+	padding: 0.8rem;
+	background: var(--brightyellow);
+	display: inline-block;
+	margin: 1.5rem 0 1rem 0;
+	border-radius: 5px;
+	box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
+	color: var(--lightgray);
+	text-decoration: none;
+}
+
+/*************why us box******************/
+
+.boxthree {
+	color: #fff;
+	background-color: var(--cyan);
+	padding-bottom: 1rem;
+}
+
+.boxthree h3 {
+	margin: 0.4rem 0 0.8rem 0;
+}
+
+.boxthree p {
+	font-size: 0.9rem;
+	color: var(--lightgray);
+	line-height: 1.6;
+}
+
+
+/*****************responsiveness*************/
+
+@media only screen and (min-width: 900px) {
+	.container {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.boxone {
+		grid-area: 1/ 1/ 2/ 3;
+	}
+
+	.boxtwo,
+	.boxthree {
+		grid-row: 2;
+	}
+}
+
+footer {
+	margin: 2rem;
+}
+
+.attribution {
+	font-size: 1rem;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+.attribution a:hover {
+	color: red;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 140px;
+	background-color: #5e0d0c;
+	color: #fff;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
+	box-shadow:
+		inset 1px 1px 0px rgba(255, 255, 255, 0.25),
+		/* highlight */
+		inset 0 0 6px #a23227,
+		/* inner glow */
+		inset 0 80px 80px -40px #ac3223,
+		/* gradient */
+		1px 1px 3px rgba(0, 0, 0, 0.7);
+	/* shadow */
+	text-align: center;
+	border-radius: 15px;
+	padding: 0.7rem;
+	font-size: 0.8rem;
+
+	/* tooltip position */
+	position: absolute;
+	z-index: 1;
+	bottom: 100%;
+	left: 53%;
+	margin-bottom: 1rem;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #5e0d0c transparent transparent transparent;
+}
